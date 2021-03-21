@@ -1,0 +1,11 @@
+# Object files
+*.o
+*.obj
+*.OBJ
+*.brk
+*.BRK
+
+# Executables
+*.exe
+*.EXE
+
