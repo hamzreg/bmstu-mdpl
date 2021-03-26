@@ -2,7 +2,7 @@ PUBLIC input_matrix
 PUBLIC change_matrix
 PUBLIC output_matrix
 
-DATAMATRIX     SEGMENT PARA PUBLIC 'DATA'
+DATA     SEGMENT PARA PUBLIC 'DATA'
     rows       DB      1
     columns    DB      1
     matrix     DB      81   DUP ("0")
@@ -10,10 +10,10 @@ DATAMATRIX     SEGMENT PARA PUBLIC 'DATA'
     sum        DB      1
     i          DB      1
     fl         DB      1
-DATAMATRIX     ENDS
+DATA     ENDS
 
 SEGCODE    SEGMENT PARA PUBLIC 'CODE'
-        ASSUME CS: SEGCODE, DS: DATAMATRIX
+        ASSUME CS: SEGCODE, DS: DATA
 
 input_number:
     MOV AH, 01h
