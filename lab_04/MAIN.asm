@@ -21,7 +21,7 @@ DATANUM    SEGMENT PARA PUBLIC 'DATA'
 DATANUM ENDS
 
 SEGCODE    SEGMENT PARA PUBLIC 'CODE'
-    ASSUME CS:SEGCODE, DS: DATANUM
+    ASSUME CS: SEGCODE, DS: DATANUM
 
     ; Ввод строки из stdin - порядкового номера числа.
 input:
