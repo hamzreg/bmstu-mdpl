@@ -1,0 +1,9 @@
+PUBLIC exit
+
+SEGCODE    SEGMENT PARA PUBLIC 'CODE'
+           ASSUME CS: SEGCODE
+exit:
+    MOV AX, 4c00h
+    INT 21h
+SEGCODE    ENDS
+END
