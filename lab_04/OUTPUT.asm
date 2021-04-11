@@ -21,12 +21,10 @@ output:
     INT 21h
 
     ; Вывод "\n" в stdout.
-    MOV AH, 2
     MOV DL, 10
     INT 21h
 
     ; Вывод буквы в stdout.
-    MOV AH, 2
     MOV DL, alphabet[SI - 1]
     INT 21h
 

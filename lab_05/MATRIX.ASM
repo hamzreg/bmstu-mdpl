@@ -2,7 +2,7 @@ PUBLIC input_matrix
 PUBLIC change_matrix
 PUBLIC output_matrix
 
-DATA     SEGMENT PARA PUBLIC 'DATA'
+SEGDATA     SEGMENT PARA PUBLIC 'DATA'
     rows       DB      1
     columns    DB      1
     matrix     DB      81   DUP ("0")
@@ -10,10 +10,10 @@ DATA     SEGMENT PARA PUBLIC 'DATA'
     sum        DB      1
     i          DB      1
     fl         DB      1
-DATA     ENDS
+SEGDATA     ENDS
 
 SEGCODE    SEGMENT PARA PUBLIC 'CODE'
-        ASSUME CS: SEGCODE, DS: DATA
+        ASSUME CS: SEGCODE, DS: SEGDATA
 
 input_number:
     MOV AH, 01h
@@ -32,7 +32,7 @@ find_count_elements:
     ret
 
 input_matrix:
-    MOV AX, DATAMATRIX
+    MOV AX, SEGDATA
     MOV DS, AX
 
     call input_number
