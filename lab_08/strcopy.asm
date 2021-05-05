@@ -6,9 +6,11 @@ asm_strcopy:
     mov RCX, RDX
     cmp RDI, RSI
     je exit
-    jl copy
 
 not_equal:
+    cmp RDI, RSI
+    jl copy
+
     mov RCX, RDX
     mov RAX, RDI
     sub RAX, RSI
@@ -21,11 +23,11 @@ not_equal:
     dec RSI
     dec RDI
 
-    std
+    std ; DF = 1 операция справа налево
 
 copy:
     rep MOVSB
-    cld
+    cld ; DF = 0 операция слева направо
 
 exit:
     ret
